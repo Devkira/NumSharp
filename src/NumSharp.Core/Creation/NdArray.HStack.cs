@@ -66,7 +66,8 @@ namespace NumSharp.Core
                 else
                     shapes[1] = npAll.Sum(x => x.shape[1]);
 
-                nd.Storage.Allocate(nd.Storage.DType, new Shape(shapes), 2);
+                //nd.Storage.Allocate(nd.Storage.DType, new Shape(shapes), 2);
+                nd.Storage.Allocate(typeof(object), new Shape(shapes), 2);
                 nd.Storage.SetData(list.ToArray());
                 nd.Storage.ChangeTensorLayout(1);
 
